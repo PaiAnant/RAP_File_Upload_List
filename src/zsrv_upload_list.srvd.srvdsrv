@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service def. for File Upload List'
+define service Zsrv_upload_list {
+  expose ZC_UPLOAD_LIST as List;
+}

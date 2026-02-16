@@ -1,0 +1,44 @@
+managed;
+strict ( 2 );
+with draft;
+
+define behavior for zi_upload_list alias List
+implementation in class zbp_i_upload_list unique
+persistent table ztb_upload_list
+draft table ztb_upl_list_d
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) LineId, LineNum;
+
+  static action downloadTemplate;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_upload_list
+    {
+      LineId             = line_id;
+      LineNum            = line_no;
+      PoNumber           = po_number;
+      PoItem             = po_item;
+      SiteId             = site_id;
+      UnitOfMeasure      = unit_of_measure;
+      GrUantity          = gr_uantity;
+      HeaderText         = header_text;
+      LastChangedAt      = last_changed_at;
+      LocalCreatedAt     = local_created_at;
+      LocalCreatedBy     = local_created_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LocalLastChangedBy = local_last_changed_by;
+    }
+
+}

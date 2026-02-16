@@ -1,0 +1,43 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'File Data',
+    typeNamePlural: 'File Data'
+}
+
+annotate entity ZC_UPLOAD_LIST with
+{
+  @UI.hidden: true
+  @UI: { lineItem: [{ type: #FOR_ACTION, label: 'Download Template', dataAction: 'downloadTemplate' }
+  //                    ,{ type: #FOR_ACTION, label: 'Upload Data', dataAction: 'uploadData' }
+                    ] }
+//  enduser;
+//  @UI.hidden: true
+  LineId;
+  @UI : { lineItem: [{ position: 10, label: 'Line' }] }
+  LineNum;
+  @UI : { lineItem: [{ position: 20, label: 'PO Number' }] }
+  PoNumber;
+  @UI : { lineItem: [{ position: 30, label: 'PO Item' }] }
+  PoItem;
+  @UI : { lineItem: [{ position: 40, label: 'Quantity' }] }
+  GrUantity;
+  @UI : { lineItem: [{ position: 50, label: 'UoM' }] }
+  UnitOfMeasure;
+  @UI : { lineItem: [{ position: 60, label: 'Site ID' }] }
+  SiteId;
+  @UI : { lineItem: [{ position: 70, label: 'Header Text' }] }
+  HeaderText;
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI: { lineItem: [{ position: 40, label: 'Last Used At' }],
+         dataPoint: { qualifier: 'tqChangedAt', title: 'Last Changed At' } }
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+
+}
