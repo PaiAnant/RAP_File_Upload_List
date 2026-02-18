@@ -17,6 +17,13 @@ etag master LocalLastChangedAt
   field ( readonly ) LineId, LineNum;
 
   static action downloadTemplate;
+//  static action uploadData;
+
+static action ExcelUpload deep parameter Z_I_UploadParams ;
+
+side effects
+  { field LineNum affects $self, messages;
+  }
 
   draft action Activate optimized;
   draft action Discard;

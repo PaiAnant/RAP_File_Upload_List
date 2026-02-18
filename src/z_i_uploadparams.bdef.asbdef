@@ -1,0 +1,8 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for Z_I_UploadParams //alias <alias_name>
+{
+  association _StreamProperties with hierarchy;
+}

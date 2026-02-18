@@ -9,6 +9,8 @@ define behavior for ZC_UPLOAD_LIST alias List
   use delete;
 
   use action downloadTemplate;
+  //  use action uploadData;
+  use action ExcelUpload;
 
   use action Activate;
   use action Discard;

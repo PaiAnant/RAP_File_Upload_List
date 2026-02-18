@@ -19,6 +19,10 @@ define root view entity zi_upload_list
       unit_of_measure       as UnitOfMeasure,
       site_id               as SiteId,
       header_text           as HeaderText,
+//      attachment            as Attachment,
+//      @Semantics.mimeType: true
+//      mimetype              as Mimetype,
+//      filename              as Filename,
       @Semantics.user.createdBy: true
       local_created_by      as LocalCreatedBy,
       @Semantics.systemDateTime.createdAt: true
