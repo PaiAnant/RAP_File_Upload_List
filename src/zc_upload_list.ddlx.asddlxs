@@ -9,7 +9,7 @@ annotate entity ZC_UPLOAD_LIST with
 {
   @UI.hidden: true
   @UI: { lineItem: [{ type: #FOR_ACTION, label: 'Download Template', dataAction: 'downloadTemplate' }
-                      ,{ type: #FOR_ACTION, label: 'Upload Data', dataAction: 'ExcelUpload' }
+                      ,{ type: #FOR_ACTION, label: 'Upload Data (RAP)', dataAction: 'ExcelUpload' }
                     ] }
   //  enduser;
   //  @UI.hidden: true
@@ -28,12 +28,12 @@ annotate entity ZC_UPLOAD_LIST with
   SiteId;
   @UI : { lineItem: [{ position: 70, label: 'Header Text' }] }
   HeaderText;
-//  @UI.hidden: true
-//  Attachment;
-//  @UI.hidden: true
-//  Filename;
-//  @UI.hidden: true
-//  Mimetype;
+  //  @UI.hidden: true
+  //  Attachment;
+  //  @UI.hidden: true
+  //  Filename;
+  //  @UI.hidden: true
+  //  Mimetype;
   @UI.hidden: true
   LocalCreatedBy;
   @UI.hidden: true
