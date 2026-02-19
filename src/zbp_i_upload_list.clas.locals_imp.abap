@@ -97,9 +97,10 @@ CLASS lhc_List IMPLEMENTATION.
               lv_has_error = abap_true.
           ENDCASE.
           IF lv_has_error = abap_true.
-            APPEND VALUE #( %tky = lt_ulpoad_list[ 1 ]-%tky ) TO failed-list.
+*            APPEND VALUE #( %tky = lt_ulpoad_list[ 1 ]-%tky ) TO failed-list.
+            APPEND VALUE #( %cid = keys[ 1 ]-%cid ) TO failed-list.
             APPEND VALUE #(
-              %tky = lt_ulpoad_list[ 1 ]-%tky
+*              %tky = lt_ulpoad_list[ 1 ]-%tky
               %msg = new_message_with_text(
                        severity = if_abap_behv_message=>severity-error
                        text     = 'Wrong File Format!!' )

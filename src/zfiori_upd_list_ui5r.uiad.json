@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "{{appDescription}}",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Upload File List Report"
+  },
+  "ui5AppDetails": {
+    "appId": "upload_file"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_385B0B77446B03210E85986D660A39C175E46554_TM",
+    "semanticObject": "ZFIORI_UPLOAD",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_385B0B77446B03210E85986D660A39C175E46554_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Upload File List Report"
+      }
+    }
+  ]
+}

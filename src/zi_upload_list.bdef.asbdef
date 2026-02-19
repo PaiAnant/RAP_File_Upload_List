@@ -8,7 +8,7 @@ persistent table ztb_upload_list
 draft table ztb_upl_list_d
 lock master
 total etag LastChangedAt
-authorization master ( instance )
+authorization master ( instance, global )
 etag master LocalLastChangedAt
 {
   create ( authorization : global );
