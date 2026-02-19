@@ -2,11 +2,42 @@
 
 @UI.headerInfo: {
     typeName: 'File Data',
-    typeNamePlural: 'File Data'
+    typeNamePlural: 'File Data',
+    title: {
+        type: #STANDARD,
+        label: 'Line Number',
+        value: 'LineNum'
+    }
 }
 
 annotate entity ZC_UPLOAD_LIST with
 {
+
+  @UI.facet: [{
+      id: 'Header',
+      purpose: #STANDARD,
+      position: 10 ,
+      label: 'Product Details',
+      type: #IDENTIFICATION_REFERENCE
+  },
+  {
+      id: 'idChangedOn',
+      purpose: #HEADER,
+      position: 30 ,
+      label: 'Changed On',
+      type: #DATAPOINT_REFERENCE,
+      targetQualifier: 'tqChangedAt'
+  },
+  {
+      id: 'idCreatedBy',
+      purpose: #HEADER,
+      position: 20 ,
+      label: 'Created By',
+      type: #DATAPOINT_REFERENCE,
+      targetQualifier: 'tqCreatedBy'
+  }]
+
+
   @UI.hidden: true
   @UI: { lineItem: [{ type: #FOR_ACTION, label: 'Download Template', dataAction: 'downloadTemplate' }
                        ,{ type: #FOR_ACTION, label: 'Upload Data (RAP)', dataAction: 'ExcelUpload' }
@@ -15,19 +46,19 @@ annotate entity ZC_UPLOAD_LIST with
   //  enduser;
   //  @UI.hidden: true
   LineId;
-  @UI : { lineItem: [{ position: 10, label: 'Line' }] }
+  @UI : { lineItem: [{ position: 10, label: 'Line' }], identification: [{ position: 10, label: 'Line' }] }
   LineNum;
-  @UI : { lineItem: [{ position: 20, label: 'PO Number' }] }
+  @UI : { lineItem: [{ position: 20, label: 'PO Number' }], identification: [{ position: 20, label: 'PO Number' }] }
   PoNumber;
-  @UI : { lineItem: [{ position: 30, label: 'PO Item' }] }
+  @UI : { lineItem: [{ position: 30, label: 'PO Item' }], identification: [{ position: 30, label: 'PO Item' }] }
   PoItem;
-  @UI : { lineItem: [{ position: 40, label: 'Quantity' }] }
+  @UI : { lineItem: [{ position: 40, label: 'Quantity' }], identification: [{ position: 40, label: 'Quantity' }] }
   GrUantity;
-  @UI : { lineItem: [{ position: 50, label: 'UoM' }] }
+  @UI : { lineItem: [{ position: 50, label: 'UoM' }], identification: [{ position: 50, label: 'UoM' }] }
   UnitOfMeasure;
-  @UI : { lineItem: [{ position: 60, label: 'Site ID' }] }
+  @UI : { lineItem: [{ position: 60, label: 'Site ID' }], identification: [{ position: 60, label: 'Site ID' }] }
   SiteId;
-  @UI : { lineItem: [{ position: 70, label: 'Header Text' }] }
+  @UI : { lineItem: [{ position: 70, label: 'Header Text' }], identification: [{ position: 70, label: 'Header Text' }] }
   HeaderText;
   //  @UI.hidden: true
   //  Attachment;
@@ -35,13 +66,14 @@ annotate entity ZC_UPLOAD_LIST with
   //  Filename;
   //  @UI.hidden: true
   //  Mimetype;
-  @UI.hidden: true
+  @UI: { lineItem: [{ position: 90, label: 'Created By' }] }
+  @UI.dataPoint: { qualifier: 'tqCreatedBy', title: 'Created By' }
   LocalCreatedBy;
   @UI.hidden: true
   LocalCreatedAt;
   @UI.hidden: true
   LocalLastChangedBy;
-  @UI: { lineItem: [{ position: 40, label: 'Last Used At' }],
+  @UI: { lineItem: [{ position: 80, label: 'Last Used At' }],
          dataPoint: { qualifier: 'tqChangedAt', title: 'Last Changed At' } }
   LocalLastChangedAt;
   @UI.hidden: true
